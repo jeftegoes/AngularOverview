@@ -13,3 +13,35 @@
 - So, how is this done?
   - JavaScript changes the DOM, changes whatever is displayed here (in the browser), by changing the HTML code during runtime.
   - That is why you never see the refresh icon on the  because we're only changing the currently-loaded page.
+
+# What is TypeScript
+
+# Structure of project folder 
+
+- src
+  - app
+  - assets
+  - environments
+- node_modules
+- package.json
+
+# Commands
+
+# Specific extensions
+
+- Angular Language Service
+
+
+## Npm commands
+- Download all dependencies from package.json in current project
+  - npm install
+- Install angular cli latest version
+  - npm install `-g @angular/cli` # -g global installation (All users)
+- Install a specific package
+  - npm install `<package_name@<version/tag>>`
+
+## Angular Cli commands
+- Create a new app
+  - ng new `<name_project>`
+- Start application
+  - ng serve -o # -o Opens the url in default browser
