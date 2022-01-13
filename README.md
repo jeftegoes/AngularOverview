@@ -45,3 +45,24 @@
   - ng new `<name_project>`
 - Start application
   - ng serve -o # -o Opens the url in default browser
+
+
+
+# Tips
+
+# Issues & Troubleshotting
+```
+Error: I have “ERROR in Internal Error: Unexpected interpolation” error when I run npm start in Angular 9
+Solution: I have similar problem for angular-starter and I was able to remove this bug after:
+	• upgrade node and npm to lastes versions (still error)
+	• remove node_modules
+	• npm cache clean --force
+	• npm install (still error)
+	• npm rebuild node-sass --force (still error)
+	• and this is CRITICAL (surprisingly) : build app by npm run build:aot
+After this steps webpack: npm start command start working properly and not hang.
+```
+
+```
+export declare function forkJoin<A, B, C, D, E, F, G>(sources: [ObservableInput<A>, ObservableInput<B>, ObservableInput<C>, ObservableInput<D>, ObservableInput<E>, ObservableInput<F>, ObservableInput<G>]): Observable<[A, B, C, D, E, F, G]>;
+```
