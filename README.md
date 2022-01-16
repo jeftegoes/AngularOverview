@@ -92,7 +92,7 @@ in the HTML code in the template.
 
 - `$event` is super important is kind of a reserved variable name, you can use in the template when using event binding. `$event` will simply be the data emitted with that event.
 
-- Example:
+- Example 1:
   - Html: `<input type="text" class="form-control" (input)="onUpdateServerName($event)" />`
   - Ts: 
   ```
@@ -100,6 +100,17 @@ in the HTML code in the template.
 
     onUpdateServerName(event: Event) {
       this.serverName = (<HTMLInputElement>event.target).value;
+    }
+  ```
+
+- Example 2:
+  - Html: `<input type="text" class="form-control" (input)="onUpdateServerName($event)" />`
+  - Ts: 
+  ```
+    serverName: string = '';
+
+    onUpdateServerName(event: any) {
+      this.serverName = event.target.value;
     }
   ```
 
@@ -122,6 +133,103 @@ in the HTML code in the template.
   ```
 
 # Directives
+- What are directives? **Directives are instructions in the DOM** and we actually already use directives without knowing it, components are kind of such instructions in the DOM.
+- Once we place the selector of our component somewhere in our templates, at this point of time we're instructing Angular to add the content of our component template and the business logic in our TypeScript code in this place where we use the selector.
+
+## Built-in directives
+### *ngIf
+- Example:
+  - Html:
+    ```
+      <p *ngIf="serverCreated; else noServer">Server was created, server name is {{ serverName }}</p>
+      <ng-template #noServer>
+        <p>No server was created!</p>
+      </ng-template>
+    ```
+  - Ts: 
+  ```
+    serverCreated: boolean = false;
+
+    onCreateServer() {
+      this.serverCreated = true;
+    }
+  ```
+### [ngStyle]="{ key: value }"
+- **Super important to understand that property binding is not the same as a directive.**
+- Example:
+  - Html:
+    ```
+      <p [ngStyle]="{ backgroundColor: getColor() }">
+        {{ "Server" }} with ID {{ serverId }} is {{ getServerStatus() }}
+      </p>
+    ```
+  - Ts: 
+  ```
+    serverId: number = 10;
+    serverStatus: string = '';
+    
+    constructor() {
+      this.randomNumber = Math.random();
+      this.serverStatus = this.randomNumber > 0.5 ? 'online' : 'offline';
+    }
+
+    getServerStatus() {
+      return this.serverStatus;
+    }
+
+    getColor() {
+      return this.serverStatus === 'online' ? 'green' : 'red';
+    }
+  ```
+
+### [ngClass]="{key: value}"
+- Example:
+  - Html:
+    ```
+      <p [ngStyle]="{ backgroundColor: getColor() }" [ngClass]="{online: serverStatus === 'online'}">
+        {{ "Server" }} with ID {{ serverId }} is {{ getServerStatus() }}
+      </p>
+    ```
+  - Ts: 
+  ```
+    @Component({
+      selector: 'app-server',
+      templateUrl: 'server.component.html',
+      styles: [`
+        .online {
+          color: white;
+        }
+      `]
+    })
+
+    serverId: number = 10;
+    serverStatus: string = '';
+    
+    constructor() {
+      this.randomNumber = Math.random();
+      this.serverStatus = this.randomNumber > 0.5 ? 'online' : 'offline';
+    }
+
+    getServerStatus() {
+      return this.serverStatus;
+    }
+
+    getColor() {
+      return this.serverStatus === 'online' ? 'green' : 'red';
+    }
+  ```
+
+### *ngFor="let element of array"
+- Example:
+  - Html:
+    ```
+      <app-server *ngFor="let server of servers">
+      </app-server>
+    ```
+  - Ts: 
+  ```
+    servers = ['Testserver', 'Testserver2'];
+  ```
 
 # Modules
 
