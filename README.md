@@ -254,6 +254,7 @@ in the HTML code in the template.
 ## Npm commands
 - Download all dependencies from package.json in current project
   - npm install
+  - npm install --save # As of npm 5.0.0, installed modules are added as a dependency by default, so the --save option is no longer needed
 - Install angular cli latest version
   - npm install `-g @angular/cli` # -g global installation (All users)
 - Install a specific package
@@ -267,6 +268,10 @@ in the HTML code in the template.
 - Create a new component
   - ng generate component `<name_component>`
   - ng g c `<name_component>`
+  - ng g c recipes --skipTests=true # skipTests=true don't create *.spec.ts
+- Test aplication
+  - ng test
+  - ng test --code-coverage
 
 
 
