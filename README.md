@@ -232,9 +232,6 @@ in the HTML code in the template.
   ```
 
 # Modules
-
-# Commands
-
 ```
   In app.modules.ts:
 
@@ -246,10 +243,11 @@ in the HTML code in the template.
   ],
 ```
 
+## Unit test
+
 # Specific extensions
 
 - Angular Language Service
-
 
 ## Npm commands
 - Download all dependencies from package.json in current project
@@ -269,6 +267,7 @@ in the HTML code in the template.
   - ng generate component `<name_component>`
   - ng g c `<name_component>`
   - ng g c recipes --skipTests=true # skipTests=true don't create *.spec.ts
+  - ng g c recipes --flat # Create component in the same path of directory
 - Test aplication
   - ng test
   - ng test --code-coverage
