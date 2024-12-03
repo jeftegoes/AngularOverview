@@ -5,13 +5,14 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.context.annotation.RequestScope;
+
 import java.util.List;
 
 @RestController
 @RequestScope
-@RequestMapping(value = "api/products/")
+@RequestMapping("api/")
 public class ProductController {
-    @GetMapping
+    @GetMapping("products/")
     public List<Product> getAll() {
         return List.of(
                 new Product(1, "Product 1", "https://dummyjson.com/image/100"),
@@ -20,5 +21,10 @@ public class ProductController {
                 new Product(4, "Product 4", "https://dummyjson.com/image/400"),
                 new Product(5, "Product 5", "https://dummyjson.com/image/500")
         );
+    }
+
+    @GetMapping("version/")
+    public String getVersion() {
+        return "v0.0.0.1";
     }
 }
