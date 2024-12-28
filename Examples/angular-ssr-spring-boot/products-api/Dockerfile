@@ -10,4 +10,4 @@ WORKDIR /app
 COPY --from=build /app/target/products-api-0.0.1-SNAPSHOT.jar .
 RUN echo $(ls)
 ENTRYPOINT ["java", "-jar", "products-api-0.0.1-SNAPSHOT.jar"]
-EXPOSE 8080
+EXPOSE 80
