@@ -1,0 +1,32 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.2.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Examples", "Examples", "{B36A84DF-456D-A817-6EDD-3EC3E7F6E11F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "auth-guard-roles", "auth-guard-roles", "{750E039F-239C-A33F-ABC1-BF869BC12C94}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "auth-guard-basic", "Examples\auth-guard-roles\API\auth-guard-basic.csproj", "{FCB6CE1A-A112-DF46-280F-CEA364475E6D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FCB6CE1A-A112-DF46-280F-CEA364475E6D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FCB6CE1A-A112-DF46-280F-CEA364475E6D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FCB6CE1A-A112-DF46-280F-CEA364475E6D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FCB6CE1A-A112-DF46-280F-CEA364475E6D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{750E039F-239C-A33F-ABC1-BF869BC12C94} = {B36A84DF-456D-A817-6EDD-3EC3E7F6E11F}
+		{FCB6CE1A-A112-DF46-280F-CEA364475E6D} = {750E039F-239C-A33F-ABC1-BF869BC12C94}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1C0F773B-D7E0-49BB-965B-3CA04951E5AA}
+	EndGlobalSection
+EndGlobal
